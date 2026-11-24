@@ -17,7 +17,7 @@ def caminho_livre(
     dist_c = abs(c2 - c1)
 
     #Trava de segurança: garante que o trajeto forme uma linha reta (horizontal/vertical)
-    #ou uma diagonal perfeita. Isso evita um loop infinito caso a fução seja chamada
+    #ou uma diagonal perfeita. Isso evita um loop infinito caso a fução seja chamada,
     #com coordenadas aleatorias (ex: movimento em "L" de cavalo).
     if not (l1 == l2 or c1 == c2 or dist_l == dist_c):
         return False
