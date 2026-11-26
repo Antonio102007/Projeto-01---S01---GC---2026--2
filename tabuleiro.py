@@ -1,4 +1,3 @@
-
 def criar_tabuleiro():
     """
     Cria o tabuleiro com as peças nas posições iniciais.
@@ -9,14 +8,14 @@ def criar_tabuleiro():
 
     # Letras maiúsculas são as brancas e minúsculas são as pretas
     tabuleiro = [
-        ["t", "c", "b", "d", "r", "b", "c", "t"],
-        ["p", "p", "p", "p", "p", "p", "p", "p"],
+        ["♜", "♞", "♝", "♛", "♚", "♝", "♞", "♜"],
+        ["♟", "♟", "♟", "♟", "♟", "♟", "♟", "♟"],
         [".", ".", ".", ".", ".", ".", ".", "."],
         [".", ".", ".", ".", ".", ".", ".", "."],
         [".", ".", ".", ".", ".", ".", ".", "."],
         [".", ".", ".", ".", ".", ".", ".", "."],
-        ["P", "P", "P", "P", "P", "P", "P", "P"],
-        ["T", "C", "B", "D", "R", "B", "C", "T"]
+        ["♙", "♙", "♙", "♙", "♙", "♙", "♙", "♙"],
+        ["♖", "♘", "♗", "♕", "♔", "♗", "♘", "♖"],
     ]
 
     return tabuleiro
@@ -24,7 +23,7 @@ def criar_tabuleiro():
 
 def mostrar_tabuleiro(tabuleiro):
     """
-    Mostra o tabuleiro no terminal.
+    Mostra o tabuleiro no terminal com coordenadas padrão do xadrez (A-H e 8-1).
 
     Parâmetros:
         tabuleiro (list)
@@ -33,19 +32,21 @@ def mostrar_tabuleiro(tabuleiro):
         None
     """
 
-    print("    0 1 2 3 4 5 6 7")
+    print("    A B C D E F G H")
     print("   -----------------")
 
     # Percorre as linhas e colunas
     for linha in range(8):
-        print(linha, "|", end=" ")
+        numero_linha = 8 - linha
+        print(numero_linha, "|", end=" ")
 
         for coluna in range(8):
             print(tabuleiro[linha][coluna], end=" ")
 
-        print("|")
+        print("|", numero_linha)
 
     print("   -----------------")
+    print("    A B C D E F G H")
 
 
 def posicao_valida(pos):

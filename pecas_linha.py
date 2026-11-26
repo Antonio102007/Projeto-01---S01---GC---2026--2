@@ -1,8 +1,4 @@
-def caminho_livre( 
-    tabuleiro: list[list[str]],
-    origem: tuple[int, int],
-    destino: tuple[int, int], 
-) -> bool:
+def caminho_livre( tabuleiro, origem, destino) -> bool:
     '''
     Verifica se todas ass casas intermediárias entre origem e destinoestão vazias.
     nota: Não verifica a casa de origem nem a cadas de destino (pois o destino pode conter uma peça adversária para capturar, validada em capturas.py)
@@ -58,10 +54,7 @@ def caminho_livre(
 
 
 def movimento_torre(
-    tabuleiro: list[list[str]],
-    origem: tuple[int, int],
-    destino: tuple[int, int],
-) -> bool:
+    tabuleiro, origem, destino) -> bool:
     """
     Valida o movimento da Torre: anda apenas em linha reta (horizontal ou vertical)
     por quantas casas quiser, desde que não haja obstruções.
@@ -83,11 +76,7 @@ def movimento_torre(
     return caminho_livre(tabuleiro, origem, destino)
 
 
-def movimento_bispo(
-    tabuleiro: list[list[str]],
-    origem: tuple[int, int],
-    destino: tuple[int, int],
-) -> bool:
+def movimento_bispo(tabuleiro, origem, destino,) -> bool:
     """
     Valida o movimento do Bispo: anda apenas nas diagonais por quantas casas
     quiser, desde que não haja obstruções.
@@ -109,11 +98,7 @@ def movimento_bispo(
     return caminho_livre(tabuleiro, origem, destino)
 
 
-def movimento_dama(
-    tabuleiro: list[list[str]],
-    origem: tuple[int, int],
-    destino: tuple[int, int],
-) -> bool:
+def movimento_dama(tabuleiro, origem, destino,) -> bool:
     """
     Valida o movimento da Dama (Rainha): combina os movimentos da Torre e do Bispo,
     podendo andar em linha reta ou na diagonal sem pular peças.

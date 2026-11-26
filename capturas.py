@@ -1,5 +1,5 @@
 #movimento do rei desde no início da partida 
-def movimento_rei(tabuleiro, origem, destino): 
+def movimento_rei(tabuleiro, origem, destino) -> bool: 
     linha_origem = origem[0]
     coluna_origem = origem[1]
 
@@ -17,9 +17,9 @@ def movimento_rei(tabuleiro, origem, destino):
             return True 
 
     return False
-print ()
 
-def movimento_cavalo(tabuleiro, origem, destino):
+
+def movimento_cavalo(tabuleiro, origem, destino) -> bool:
     linha_origem = origem[0]
     coluna_origem = origem[1]
 
@@ -34,4 +34,3 @@ def movimento_cavalo(tabuleiro, origem, destino):
 
     return False
 
-print(movimento_rei(tabuleiro, (4, 4), (3, 4)))
